@@ -23,18 +23,12 @@ jobs:
       with:
         node-version: '20.11.0'
 
-    - name: cd
-      run: cd client-app
-
-    - name: ls
-      run: ls
-
     - name: Install dependencies
-    
       working-directory: client-app
       run: npm install
 
     - name: Test end-to-end
+      working-directory: client-app
       run: npx cypress run
 
     - name: Upload Cypress screenshots
