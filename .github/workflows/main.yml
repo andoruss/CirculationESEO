@@ -1,0 +1,44 @@
+name: Test end-to-end
+
+on:
+  push:
+    branches:
+      - dev
+      - main
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20.11.0'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Test end-to-end
+      run: npx cypress run
+
+    - name: Upload Cypress screenshots
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: cypress-screenshots
+        path: cypress/screenshots
+
+    - name: Upload Cypress videos
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: cypress-videos
+        path: cypress/videos
