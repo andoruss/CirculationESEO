@@ -1,4 +1,3 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -28,5 +27,10 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "exclude": ["cypress", "./cypress.config.ts", "**/*.cy.tsx"],
+  // "files": ["src/polyfills.ts"],
+  "include": [
+    "src/**/*.ts" 
+  ],
 }
