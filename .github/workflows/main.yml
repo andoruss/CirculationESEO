@@ -24,9 +24,17 @@ jobs:
         node-version: '20.11.0'
 
     - name: Install dependencies
+      working-directory: client-app
       run: npm install
 
+    - name: Start Angular server
+      working-directory: client-app
+      run: npm start &
+      env:
+        CI: true
+
     - name: Test end-to-end
+      working-directory: client-app
       run: npx cypress run
 
     - name: Upload Cypress screenshots
