@@ -8,7 +8,7 @@ describe('The Sensor Page', () => {
       sensorData = data;
     });
   
-    cy.intercept('GET', '/api/monitor', { fixture: 'monitor.json' }).as('getData');
+    cy.intercept('GET', '/api/Monitor', { fixture: 'monitor.json' }).as('getData');
 
     // Intercepter les requêtes GET pour renvoyer la liste actuelle
     cy.intercept('GET', '/api/sensor', (req) => {
@@ -58,7 +58,7 @@ describe('The Sensor Page', () => {
     cy.get('#latitude').type('0.0000000000000060')
     cy.get('#destination').type('west')
     cy.get('#position').type('rue du chapeau rouge')
-    cy.get('#monitor').select('moniteur1')
+    cy.get('select').select('1')
     cy.contains('Ajouter').click()
 
   })
