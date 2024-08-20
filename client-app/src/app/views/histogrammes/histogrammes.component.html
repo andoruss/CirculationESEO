@@ -1,0 +1,71 @@
+<div class="shadow-md bg-white p-4 flex items-center justify-between">
+  <div class="flex items-center space-x-4">
+    <div class="relative">
+      <button id="dropdownSearchButton" (click)="toggleDropdown()" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:from-blue-400 hover:to-blue-300 focus:ring-2 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 h-12" type="button">
+        Selectionner un capteur
+        <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+        </svg>
+      </button>
+
+      <!-- Dropdown menu -->
+      <div id="dropdownSearch" [class.hidden]="!dropdownOpen" class="absolute z-10 bg-white rounded-lg shadow w-[200px] h-auto mt-2 max-h-[550px] overflow-y-auto">
+        <ul class="w-full cursor-pointer text-sm  text-gray-700" aria-labelledby="dropdownSearchButton">
+          @for (sensor of sensors; track sensor) {
+            <li>
+              <div class="flex items-center p-2 cursor-pointer rounded hover:bg-gray-100">
+                <input id="{{'checkbox-item-' + sensor.sensorId}}" type="checkbox" class="cursor-pointer w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" (change)="CheckedSensor($event,sensor)">
+                <label [for]="'checkbox-item-' + sensor.sensorId" class="cursor-pointer w-full ms-2 text-sm font-medium text-gray-900 rounded">{{ sensor.sensorName }}</label>
+              </div>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+    
+    <app-date-picker-week (messageToParent)="receiveFromChild($event)"></app-date-picker-week>
+  </div>
+  <button type="button" (click)="Visualise()" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:from-blue-400 hover:to-blue-300 focus:ring-2 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 text-sm px-5 py-2.5 h-12">Visualiser</button>
+</div>
+
+<div class="flex h-screen">
+  <div class="bg-white shadow w-[180px] h-auto mt-2 max-h-full overflow-y-auto flex-shrink-0">
+    <ul class="text-center w-full text-sm text-gray-700">
+      @if (isMeasuresLoad) {
+        @for (checkedSensor of checkedSensors; track checkedSensor) {
+          <li class="px-4 py-2 hover:bg-blue-100" [class.bg-blue-200]="checkedSensor.isActive">
+            <button type="button" class="cursor-pointer" (click)="setActiveSensor(checkedSensor)">
+              <span>{{ checkedSensor.sensorName }}</span>
+            </button>
+          </li>
+        }
+      }
+    </ul>
+  </div>
+  
+  <div class="flex flex-col flex-grow justify-start items-center p-4">
+    @if (currentSensor?.sensorId && isMeasuresLoad) {
+      <div class="flex justify-between w-full mb-4 max-w-5xl">
+        <div class="w-1/4 text-center">
+          <label for="position" class="block text-sm font-medium text-gray-700">Position</label>
+          <p>{{ currentSensor?.position }}</p>
+        </div>
+        <div class="flex-grow mx-2 flex items-center justify-center">
+          <span class="block w-full border-b-2 border-dashed border-gray-300"></span>
+        </div>
+        <div class="w-1/4 text-center">
+          <label for="destination" class="block text-sm font-medium text-gray-700">Destination</label>
+          <p>{{ currentSensor?.destination }}</p>
+        </div>
+      </div>
+      
+      <div class="overflow-x-auto" style="width: 800px;">
+
+      <app-week-graph [dataInput]="updateGraph"></app-week-graph>
+        
+      </div>
+      
+    }
+  </div>
+  
+</div>

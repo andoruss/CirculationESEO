@@ -1,0 +1,8 @@
+<div>
+    <!-- Barre latérale -->
+    <app-navbar (sidebarStateChange)="onSidebarStateChange($event)"></app-navbar>
+    <!-- Contenu principal -->
+    <main [ngClass]="{'content-shift': isSidebarOpen && isScreenLarge}" class="relative">
+        <router-outlet></router-outlet>
+    </main>
+</div>

@@ -1,0 +1,70 @@
+<div class="p-8">
+  <div class="relative bg-white overflow-x-auto shadow-md sm:rounded-lg">
+    <div class="grid grid-cols-2">
+      <div class="flex items-center">
+        <h1 class="p-4">Liste des capteurs</h1>
+        @if(isLoading){
+        <app-spinner additionnalClass="h-10 p-2"> </app-spinner>
+        }
+      </div>
+      <div class="flex items-center justify-end">
+        <input (change)="onFileChange($event)"
+          class="block text-sm h-1/2 w-1/2 text-gray-500 border border-gray-300 cursor-pointer bg-gray-50"
+          id="file_input" type="file" />
+        <button (click)="submitCsv()" [disabled]="!csvSensors" class="mx-2 px-4 h-8 bg-gray-200 disabled:opacity-50">
+          +
+        </button>
+      </div>
+    </div>
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+        <tr>
+          <th></th>
+          <th scope="col" class="px-6 py-3">Capteurs</th>
+          <th scope="col" class="px-6 py-3">Longitude</th>
+          <th scope="col" class="px-6 py-3">Latitude</th>
+          <th scope="col" class="px-6 py-3">Direction</th>
+          <th scope="col" class="px-6 py-3">Position</th>
+          <th scope="col" class="px-6 py-3">
+            <a (click)="toggleCreateModal()" style="float: right; margin-right: 20px; cursor: pointer">
+              <span class="icon">➕</span>
+            </a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sensor of paginatedSensors" class="odd:bg-white even:bg-gray-50 border-b">
+          <td></td>
+          <td class="px-6 py-4">{{ sensor.sensorName }}</td>
+          <td class="px-6 py-4">{{ sensor.sensorLong }}</td>
+          <td class="px-6 py-4">{{ sensor.sensorLat }}</td>
+          <td class="px-6 py-4">{{ sensor.destination }}</td>
+          <td class="px-6 py-4">{{ sensor.position }}</td>
+          <td class="px-6 py-4">
+            <a (click)="toggleEditModal()" class="font-medium text-blue-600 hover:underline" style="cursor: pointer">
+              <span class="icon">✏️</span>
+            </a>
+            <span>&nbsp;&nbsp;</span>
+            <a (click)="deleteSensor(sensor.sensorId)" class="font-medium text-red-600 hover:underline">
+              <span class="icon">🗑️</span>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pagination flex justify-between items-center p-4">
+      <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1"
+        class="px-4 py-2 bg-gray-200 rounded disabled:opacity-50" style="cursor: pointer">
+        Précédent
+      </button>
+      <span class="mx-4">Page {{ currentPage }} sur {{ totalPages }}</span>
+      <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages"
+        class="px-4 py-2 bg-gray-200 rounded disabled:opacity-50" style="cursor: pointer">
+        Suivant
+      </button>
+    </div>
+  </div>
+</div>
+@if(showModalCreate){
+<app-add-capteur [sensors]="sensors" (closeModal)="toggleCreateModal()"></app-add-capteur>
+}

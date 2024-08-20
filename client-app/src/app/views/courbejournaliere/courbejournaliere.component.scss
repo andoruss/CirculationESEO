@@ -1,0 +1,17 @@
+.titre-class {
+    font-size: 1.2em;
+    color: rgb(51, 51, 51);
+    font-weight: bold;
+    fill: rgb(51, 51, 51);
+}
+
+.transform {
+  transition: transform 0.3s ease-in-out;
+}
+.-translate-x-full {
+  transform: translateX(-100%);
+}
+.translate-x-0 {
+  transform: translateX(0);
+}
+

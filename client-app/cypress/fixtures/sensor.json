@@ -1,0 +1,236 @@
+[
+  {
+      "sensorId": 1,
+      "sensorLong": "0.123456789101112",
+      "sensorLat": "0.0000000000001234",
+      "sensorName": "Sensor 1",
+      "position": "Position 1",
+      "destination": "Destination 1",
+      "monitorId": "Monitor-1",
+      "typeId": 1,
+      "incrementationType": 0,
+      "monitor": {
+          "monitorId": 1,
+          "monitorName": "Monitor 1",
+          "location": "Location 1"
+      },
+      "type_Sensor": "Type 1",
+      "isActive": true
+  },
+  {
+      "sensorId": 2,
+      "sensorLong": "0.123456789101112",
+      "sensorLat": "0.0000000000001234",
+      "sensorName": "Sensor 2",
+      "position": "Position 2",
+      "destination": "Destination 2",
+      "monitorId": "Monitor-2",
+      "typeId": 2,
+      "incrementationType": 1,
+      "monitor": {
+          "monitorId": 2,
+          "monitorName": "Monitor 2",
+          "location": "Location 2"
+      },
+      "type_Sensor": "Type 2",
+      "isActive": false
+  },
+  {
+      "sensorId": 3,
+      "sensorLong": "0.123456789101112",
+      "sensorLat": "0.0000000000001234",
+      "sensorName": "Sensor 3",
+      "position": "Position 3",
+      "destination": "Destination 3",
+      "monitorId": "Monitor-3",
+      "typeId": 3,
+      "incrementationType": 2,
+      "monitor": {
+          "monitorId": 3,
+          "monitorName": "Monitor 3",
+          "location": "Location 3"
+      },
+      "type_Sensor": "Type 3",
+      "isActive": true
+  },
+  {
+      "sensorId": 4,
+      "sensorLong": "0.123456789101112",
+      "sensorLat": "0.0000000000001234",
+      "sensorName": "Sensor 4",
+      "position": "Position 4",
+      "destination": "Destination 4",
+      "monitorId": "Monitor-4",
+      "typeId": 4,
+      "incrementationType": 0,
+      "monitor": {
+          "monitorId": 4,
+          "monitorName": "Monitor 4",
+          "location": "Location 4"
+      },
+      "type_Sensor": "Type 4",
+      "isActive": false
+  },
+  {
+      "sensorId": 5,
+      "sensorLong": "0.123456789101112",
+      "sensorLat": "0.0000000000001234",
+      "sensorName": "Sensor 5",
+      "position": "Position 5",
+      "destination": "Destination 5",
+      "monitorId": "Monitor-5",
+      "typeId": 5,
+      "incrementationType": 1,
+      "monitor": {
+          "monitorId": 5,
+          "monitorName": "Monitor 5",
+          "location": "Location 5"
+      },
+      "type_Sensor": "Type 1",
+      "isActive": true
+  },
+  {
+      "sensorId": 6,
+      "sensorLong": "0.123456789101112",
+      "sensorLat": "0.0000000000001234",
+      "sensorName": "Sensor 6",
+      "position": "Position 6",
+      "destination": "Destination 6",
+      "monitorId": "Monitor-6",
+      "typeId": 1,
+      "incrementationType": 2,
+      "monitor": {
+          "monitorId": 6,
+          "monitorName": "Monitor 6",
+          "location": "Location 6"
+      },
+      "type_Sensor": "Type 2",
+      "isActive": false
+  },
+  {
+      "sensorId": 7,
+      "sensorLong": "0.123456789101112",
+      "sensorLat": "0.0000000000001234",
+      "sensorName": "Sensor 7",
+      "position": "Position 7",
+      "destination": "Destination 7",
+      "monitorId": "Monitor-7",
+      "typeId": 2,
+      "incrementationType": 0,
+      "monitor": {
+          "monitorId": 7,
+          "monitorName": "Monitor 7",
+          "location": "Location 7"
+      },
+      "type_Sensor": "Type 3",
+      "isActive": true
+  },
+  {
+      "sensorId": 8,
+      "sensorLong": "0.123456789101112",
+      "sensorLat": "0.0000000000001234",
+      "sensorName": "Sensor 8",
+      "position": "Position 8",
+      "destination": "Destination 8",
+      "monitorId": "Monitor-8",
+      "typeId": 3,
+      "incrementationType": 1,
+      "monitor": {
+          "monitorId": 8,
+          "monitorName": "Monitor 8",
+          "location": "Location 8"
+      },
+      "type_Sensor": "Type 4",
+      "isActive": false
+  },
+  {
+      "sensorId": 9,
+      "sensorLong": "0.123456789101112",
+      "sensorLat": "0.0000000000001234",
+      "sensorName": "Sensor 9",
+      "position": "Position 9",
+      "destination": "Destination 9",
+      "monitorId": "Monitor-9",
+      "typeId": 4,
+      "incrementationType": 2,
+      "monitor": {
+          "monitorId": 9,
+          "monitorName": "Monitor 9",
+          "location": "Location 9"
+      },
+      "type_Sensor": "Type 1",
+      "isActive": true
+  },
+  {
+      "sensorId": 10,
+      "sensorLong": "0.123456789101112",
+      "sensorLat": "0.0000000000001234",
+      "sensorName": "Sensor 10",
+      "position": "Position 10",
+      "destination": "Destination 10",
+      "monitorId": "Monitor-10",
+      "typeId": 5,
+      "incrementationType": 0,
+      "monitor": {
+          "monitorId": 10,
+          "monitorName": "Monitor 10",
+          "location": "Location 10"
+      },
+      "type_Sensor": "Type 2",
+      "isActive": false
+  },
+  {
+      "sensorId": 11,
+      "sensorLong": "0.123456789101112",
+      "sensorLat": "0.0000000000001234",
+      "sensorName": "Sensor 11",
+      "position": "Position 11",
+      "destination": "Destination 11",
+      "monitorId": "Monitor-11",
+      "typeId": 1,
+      "incrementationType": 1,
+      "monitor": {
+          "monitorId": 11,
+          "monitorName": "Monitor 11",
+          "location": "Location 11"
+      },
+      "type_Sensor": "Type 3",
+      "isActive": true
+  },
+  {
+      "sensorId": 12,
+      "sensorLong": "0.123456789101112",
+      "sensorLat": "0.0000000000001234",
+      "sensorName": "Sensor 12",
+      "position": "Position 12",
+      "destination": "Destination 12",
+      "monitorId": "Monitor-12",
+      "typeId": 2,
+      "incrementationType": 2,
+      "monitor": {
+          "monitorId": 12,
+          "monitorName": "Monitor 12",
+          "location": "Location 12"
+      },
+      "type_Sensor": "Type 4",
+      "isActive": false
+  },
+  {
+      "sensorId": 13,
+      "sensorLong": "0.123456789101112",
+      "sensorLat": "0.0000000000001234",
+      "sensorName": "Sensor 13",
+      "position": "Position 13",
+      "destination": "Destination 13",
+      "monitorId": "Monitor-13",
+      "typeId": 3,
+      "incrementationType": 0,
+      "monitor": {
+          "monitorId": 13,
+          "monitorName": "Monitor 13",
+          "location": "Location 13"
+      },
+      "type_Sensor": "Type 1",
+      "isActive": true
+  }
+]

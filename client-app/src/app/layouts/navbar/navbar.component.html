@@ -1,0 +1,58 @@
+<div class="relative">
+    <button *ngIf="!isSidebarOpen" (click)="toggleSidebar()" id="button" type="button" class="absolute top-2 left-3 inline-flex items-center text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:from-blue-400 hover:to-blue-300 focus:ring-2 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 z-40">
+        <span class="sr-only">Open sidebar</span>
+        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+        </svg>
+    </button>
+
+    <!-- Sidebar -->
+    <aside [ngClass]="{'translate-x-0': isSidebarOpen || isScreenLarge, '-translate-x-full': !isSidebarOpen && !isScreenLarge}" class="fixed bg-white h-screen w-[220px] shadow-xl z-30 transition-transform duration-300 ease-in-out">
+        <!-- Existing Sidebar Content -->
+        <div class="p-6 flex items-center justify-center">
+            <a routerLink="home">
+                <img src="assets/img/ondijon.png" class="w-28" />
+            </a>
+        </div>
+        <div class="px-6 pb-6">
+            <button routerLink="login" routerLinkActive="active" class="w-full text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-blue-100 font-medium rounded-full text-sm px-5 py-2 ">
+                <i class="fas fa-plus"></i> Connexion
+            </button>
+        </div>
+        <nav class="text-text text-base pt-3">
+
+            <a routerLink="/capteurs" routerLinkActive="active" class="flex items-center text-text opacity-75 hover:opacity-100 py-4 pl-6 nav-item nav-link">
+                <i class="fas fa-sticky-note mr-3"></i>
+                Capteurs
+            </a>
+            <a routerLink="/mesures" routerLinkActive="active" class="flex items-center text-text opacity-75 hover:opacity-100 py-4 pl-6 nav-item nav-link">
+                <i class="fas fa-sticky-note mr-3"></i>
+                Mesures
+            </a>
+            <a routerLink="/courbejournaliere" routerLinkActive="active" class="flex items-center text-text opacity-75 hover:opacity-100 py-4 pl-6 nav-item nav-link">
+                <i class="fas fa-sticky-note mr-3"></i>
+                Courbes journalières
+            </a>
+            <a routerLink="/histogramme" routerLinkActive="active" class="flex items-center text-text opacity-75 hover:opacity-100 py-4 pl-6 nav-item nav-link">
+                <i class="fas fa-table mr-3"></i>
+                Histogrammes hebdo
+            </a>
+
+            <a routerLink="/cartechaleur" routerLinkActive="active" class="flex items-center text-text opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+                <i class="fas fa-tablet-alt mr-3"></i>
+                Carte de chaleur
+            </a>
+            <a routerLink="/traficjournalier" routerLinkActive="active" class="flex items-center text-text opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+                <i class="fas fa-calendar mr-3"></i>
+                TMJM vs TMJO
+            </a>
+        </nav>
+        <a href="#"
+            class="absolute w-full upgrade-btn bottom-0 active-nav-link text-text flex items-center justify-center py-4">
+            <i class="fas fa-arrow-circle-up mr-3"></i>
+            DIIAGE | ESEO
+        </a>
+    </aside>
+
+    <div *ngIf="isSidebarOpen && !isScreenLarge" class="fixed inset-0 bg-black opacity-50 z-20" (click)="toggleSidebar()"></div>
+</div>

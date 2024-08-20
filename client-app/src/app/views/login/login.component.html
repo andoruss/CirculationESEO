@@ -1,0 +1,38 @@
+<div class="flex login-page w-full h-full">
+    <div class="items-center justify-between mx-[35%] relative p-4 w-[33%] h-[20rem] my-64  bg-white rounded-2xl">
+        <div class="mb-4 text-lg font-bold text-text md:text-5xl lg:text-4xl pb-6">
+            Connexion
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="relative ">
+                <div class="absolute top-0 left-0 flex items-center justify-center h-full w-[60px]">
+                    <ng-icon name="heroUser" size="24px" color="var(--color-icon-search-bar)"></ng-icon>
+                </div>
+                <input type="email" placeholder="E-mail"
+                    class="form-control bg-white text-[var(--color-input-text)] border-2 border-elevated rounded-3xl h-[50px] w-[95%] pl-12"
+                    formControlName="email" />
+            </div>
+            <br />
+            <div class="relative">
+                <div class="absolute top-0 left-0 flex items-center justify-center h-full w-[60px]">
+                    <ng-icon name="heroKey" size="24px" color="var(--color-icon-search-bar)"></ng-icon>
+                </div>
+                <input type="password" placeholder="Mot de passe"
+                    class="form-control bg-white text-[var(--color-input-text)] border-2 border-elevated rounded-3xl h-[50px] w-[95%] pl-12"
+                    formControlName="password" />
+            </div>
+            <div class="mt-5 col-span-1">
+                @if(!valid){
+                <span class="text-red-600">Email ou mot de passe incorrect</span>
+                }
+            </div>
+            <div class="flex justify-center col-span-1">
+                <app-button additionnalClass="w-36 mt-3" [disabled]="loginForm.invalid || processing">
+                    @if (processing){
+                    <app-spinner additionnalClass="h-6"></app-spinner>
+                    } @else { Connexion }
+                </app-button>
+            </div>
+        </form>
+    </div>
+</div>

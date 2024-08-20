@@ -1,0 +1,8 @@
+<button type="submit" (click)="onClick()" [disabled]="disabled"
+    class="text-text bg-surface cursor-pointer font-semibold py-2 rounded-3xl shadow-lg hover:shadow-xl hover:bg-white flex items-center justify-center {{additionnalClass}}">
+    @if (loading) {
+    <app-spinner additionnalClass="h-6"></app-spinner>
+    } @else {
+    <ng-content></ng-content>
+    }
+</button>

@@ -1,0 +1,21 @@
+
+.nav-item:hover {
+    background: var(--color-surface); 
+}
+
+.active-nav-link { 
+    background: var(--color-surface); 
+}
+
+
+.relative {
+    position: relative;
+}
+  
+#button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 50;
+}
+
